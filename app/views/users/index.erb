@@ -1,0 +1,6 @@
+<% @users.each do |user| %>
+  <div class="song">
+    <h4><a href="#"><%= user.first_name %> <%= user.last_name %></a>
+      <br><span class="artist"><%= user.email%></span></h4>
+  </div>
+<% end %>

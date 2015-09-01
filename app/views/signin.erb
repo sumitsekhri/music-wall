@@ -1,0 +1,12 @@
+<form method="post" action="/signin">
+  <div>
+    <label>Email:</label>
+    <input type="text" name="email" value="<%= @user && @user.email %>">
+  </div>
+  <div>
+    <label>Password:</label>
+    <input type="password" name="password" value="<%= @user && @user.password %>">
+  </div>
+  <button class="btn waves-effect waves-light" type="submit" name="action">Login
+  </button>
+</form>

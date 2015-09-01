@@ -1,0 +1,30 @@
+<h3>Add a new song to Muzik</h3>
+<hr/>
+
+<% if @song && @song.errors.any? %>
+  <div>
+    <strong>There were issues with your submission, a title, artist or album was missing.</strong>
+    <ul>
+      <% @song.errors.full_songs.each do |song| %>
+      <li><%= song %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<form method="post" action="/songs">
+  <div>
+    <label>Artist:</label>
+    <input type="text" name="artist" value="<%= @song && @song.artist %>">
+  </div>
+  <div>
+    <label>Song Title:</label>
+    <input type="text" name="song_title" value="<%= @song && @song.song_title %>">
+  </div>
+  <div>
+    <label>Album:</label>
+    <input type="text" name="album" value="<%= @song && @song.album %>">
+  </div>
+  <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+  </button>
+</form>
